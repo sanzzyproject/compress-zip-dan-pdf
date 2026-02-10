@@ -1,0 +1,206 @@
+:root {
+    --bg-color: #F8FAFC;
+    --text-primary: #1E293B;
+    --text-secondary: #64748B;
+    --primary-blue: #3B82F6;
+    --primary-hover: #2563EB;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.05);
+    --font-main: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.highlight { color: var(--primary-blue); }
+
+.status-badge {
+    font-size: 0.75rem;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-blue);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Main Layout */
+.container {
+    padding-top: 120px; /* Offset for fixed header */
+    padding-bottom: 40px;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #1E293B 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 0.95rem;
+}
+
+/* Upload Card */
+.upload-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 20px;
+    box-shadow: var(--shadow-soft);
+    border: 2px dashed #E2E8F0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-card:hover, .upload-card.dragover {
+    border-color: var(--primary-blue);
+    background: #F0F9FF;
+    transform: translateY(-2px);
+}
+
+.icon-area {
+    margin-bottom: 20px;
+    background: #EFF6FF;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sub-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* File Info */
+.file-info {
+    display: none;
+    margin: 20px 0;
+    background: #F1F5F9;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.file-info.active {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #CBD5E1;
+    cursor: not-allowed;
+}
+
+/* Loader */
+.loader-container {
+    display: none;
+    margin-top: 20px;
+}
+
+.loader-container.active {
+    display: block;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #E2E8F0;
+    border-top: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Info Bar */
+.info-bar {
+    margin-top: 30px;
+    font-size: 0.75rem;
+    color: #94A3B8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container { width: 92%; padding-top: 100px; }
+    .hero-text h1 { font-size: 1.75rem; }
+}
