@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipLite - Modern File Compressor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">Zip<span class="highlight">Lite</span></div>
+            <div class="status-badge">V1.0 Live</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="hero-text">
+            <h1>Compress File Anda <br>Dalam Sekejap</h1>
+            <p>Optimalkan ukuran PDF dan ZIP dengan aman tanpa menyimpan data.</p>
+        </div>
+
+        <div class="upload-card" id="drop-zone">
+            <div class="icon-area">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 16V4M12 4L8 8M12 4L16 8M4 20H20" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+            <h3 id="status-text">Drag & Drop file di sini</h3>
+            <p class="sub-text">atau klik untuk memilih file</p>
+            
+            <input type="file" id="file-input" accept=".zip,.pdf" hidden>
+            
+            <div class="file-info" id="file-info">
+                <span id="file-name"></span>
+                <span id="file-size"></span>
+            </div>
+
+            <button id="action-btn" class="btn-primary" disabled>Pilih File Dulu</button>
+            
+            <div class="loader-container" id="loader">
+                <div class="spinner"></div>
+                <p>Sedang memproses...</p>
+            </div>
+        </div>
+
+        <div class="info-bar">
+            <p>Max file size: 10 MB | File akan otomatis diproses dan tidak disimpan permanen</p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
