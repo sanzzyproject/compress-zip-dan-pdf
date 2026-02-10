@@ -1,0 +1,17 @@
+{
+  "name": "vercel-compress-app",
+  "version": "1.0.0",
+  "description": "Modern Serverless File Compression",
+  "main": "api/compress.js",
+  "scripts": {
+    "start": "node api/compress.js"
+  },
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "busboy": "^1.6.0",
+    "pdf-lib": "^1.17.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
